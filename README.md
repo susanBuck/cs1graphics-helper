@@ -30,7 +30,7 @@ drawGrid(paper,100)
 markClicks(paper)
 ```
 
-__Basic example:___
+__Basic example:__
 
 ```py
 from cs1graphics import *
@@ -48,7 +48,7 @@ def example0():
 
 example0()
 
-# Invoke the helper function
+# Invoke the helper functions
 drawReferencePoints(paper)
 drawGrid(paper,100)
 markClicks(paper)
