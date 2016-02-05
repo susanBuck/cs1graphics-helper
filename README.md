@@ -13,7 +13,8 @@ This script includes 3 helper functions which will make drawing on the Canvas ea
 Run `demo.py`
 
 ## Instructions
-To use, first make sure this file `cs1graphics-helper` is in the directory of the project you're working on.
+
+[Download this zip](https://github.com/susanBuck/cs1graphics-helper/archive/master.zip), unzip it, and move the file `cs1graphics-helper.py` into your working folder.
 
 Then, on the top of your script, make sure you're importing this script in addition to cs1graphics:
 
