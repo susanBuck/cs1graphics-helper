@@ -3,12 +3,14 @@ from cs1graphicsHelper import *
 
 # Reference points:
 # Layer: 0,0
-# Polygon: First point of the polygon.
+# Polygon: First point of the polygon
 # Square: Center
 # Rectangle: Center
 # Circle: Center
 
 paper = Canvas(500,500,'yellow')
+
+
 
 # Draws a green polygon (cone)
 # Note the reference point is the first point in the polygon
@@ -20,6 +22,8 @@ def example0():
 
 example0()
 
+
+
 # Draws an blue polygon (cone) in a Layer
 # Note reference point is 0,0
 def example1():
@@ -27,9 +31,11 @@ def example1():
     cone = Polygon(Point(-50,0), Point(50,0), Point(0,200))
     cone.setFillColor('blue')
     toybox.add(cone)
+    toybox.moveTo(200,200)
     paper.add(toybox)
 
 #example1()
+
 
 
 # Draws a blue polygon (cone) and a red circle on a Layer
@@ -45,9 +51,12 @@ def example2():
     cone.setFillColor('blue')
     toybox.add(cone)
 
+    toybox.moveTo(300,300)
+    #print toybox.getReferencePoint()
     paper.add(toybox)
 
-#example2()
+example2()
+
 
 
 # Invoke helper functions as the last step
