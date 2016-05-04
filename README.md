@@ -1,11 +1,11 @@
-# cs1graphicshelper.py
+# cs1graphics-helper.py
 
 This script includes 3 helper functions which will make drawing on the Canvas easier.
 
 <img src='screenshot.png' alt='Screenshot of cs1graphicshelper'>
 
 + `drawReferencePoints(canvas)`: Marks the reference point of any objects on the canvas with a small orange circle; Layers have a small `L` inside the circle.
-+ `drawGrid(canvas,width)`: Draws a labeled grid on the canvas to help pick your coordinate points. Give a dimension, such as `100` to set the width/height of the grid.
++ `drawGrid(canvas,dimension)`: Draws a labeled grid on the canvas to help pick your coordinate points. `dimension` indicates the spacing of the grid; defaults to 100.
 + `markClicks(canvas)`: Prints the coordinates of every mouse click; can slow things down, so toggle it on/off as needed.
 
 ## Demo
