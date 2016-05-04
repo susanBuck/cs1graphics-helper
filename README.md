@@ -4,9 +4,9 @@ This script includes 3 helper functions which will make drawing on the Canvas ea
 
 <img src='screenshot.png' alt='Screenshot of cs1graphicshelper'>
 
-+ `drawReferencePoints(canvas)`: Marks the reference point of any objects on the canvas with a small orange circle.
-+ `drawGrid(canvas,width)`: Draws a labeled grid on the canvas to help pick your coordinate points. Give a width, such as `100` to set the width/height of the grid.
-+ `markClicks(canvas)`: Prints the coordinates of every mouse click.
++ `drawReferencePoints(canvas)`: Marks the reference point of any objects on the canvas with a small orange circle; Layers have a small `L` inside the circle.
++ `drawGrid(canvas,width)`: Draws a labeled grid on the canvas to help pick your coordinate points. Give a dimension, such as `100` to set the width/height of the grid.
++ `markClicks(canvas)`: Prints the coordinates of every mouse click; can slow things down, so toggle it on/off as needed.
 
 ## Demo
 
