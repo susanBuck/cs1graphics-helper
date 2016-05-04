@@ -13,22 +13,21 @@ def drawReferencePoints(canvas):
         canvas.add(refMarker)
 
 
-
 def drawGrid(canvas, division = 100):
 
     width  = canvas.getWidth()
     height = canvas.getHeight()
 
-    row = 0
-    startY = 0
-    while startY < width:
+    totalCols = width/division
+    totalRows = height/division
 
-        startX = 0
-        startY = row * division
+    # Rows
+    row,startY = 0,0
+    for i in range(totalRows):
 
-        endX = width
-        endY = startY
-
+        startX,startY = 0,row * division
+        endX,endY = width,startY
+    
         line = Polygon(Point(startX,startY),Point(endX,endY))
 
         label = makeLabel(startX,startY)
@@ -37,22 +36,20 @@ def drawGrid(canvas, division = 100):
         canvas.add(label)
         row += 1
 
-    col = 0
-    startX = 0
-    while startX < height:
+    # Cols
+    col,startX = 0,0
+    for i in range(totalCols):
 
-        startX = col * division
-        startY = 0
-
-        endX = startX
-        endY = height
-
+        startX,startY = col * division,0
+        endX,endY = startX,height
+    
         line = Polygon(Point(startX,startY),Point(endX,endY))
         label = makeLabel(startX,startY)
 
         canvas.add(label)
         canvas.add(line)
         col += 1
+
 
 def makeLabel(startX,startY):
     fontSize = 10
@@ -62,6 +59,7 @@ def makeLabel(startX,startY):
     label.moveTo(startX,startY)
 
     return label
+
 
 def markClicks(canvas):
 
