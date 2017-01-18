@@ -1,29 +1,23 @@
 # cs1graphicsHelper.py
 
-This script includes 3 helper functions which will make drawing on the Canvas easier.
-
 <img src='screenshot.png' alt='Screenshot of cs1graphicshelper'>
 
-+ `drawReferencePoints(canvas)`: Marks the reference point of any objects on the canvas with a small orange circle; Layers have a small `x` inside the circle.
-+ `drawGrid(canvas, dimension)`: Draws a labeled grid on the canvas to help pick your coordinate points. `dimension` indicates the spacing of the grid; defaults to 100.
-+ `markClicks(canvas)`: Prints the coordinates of every mouse click; can slow things down, so toggle it on/off as needed.
+This script includes 3 helper functions which will make drawing in cs1graphics easier:
 
-## Demo
+1. `drawReferencePoints(canvas)`: Marks the reference point of any objects on the canvas with a small orange circle; Layers have a small `x` inside the circle.
+2. `drawGrid(canvas, dimension)`: Draws a labeled grid on the canvas to help pick coordinate points. Param `dimension` indicates the spacing of the grid; defaults to 100.
+3. `markClicks(canvas)`: Prints the coordinates of every mouse click; can slow things down, so toggle it on/off as needed.
 
-Run `demo.py`
 
 ## Instructions
-
-[Download this zip](https://github.com/susanBuck/cs1graphics-helper/archive/master.zip), unzip it, and move the file `cs1graphics-helper.py` into your working folder.
-
-Then, on the top of your script, make sure you're importing this script in addition to cs1graphics:
+Put [cs1graphicsHelper.py](https://raw.githubusercontent.com/wellesleycs111/cs1graphicsHelper/master/cs1graphicsHelper.py) in your working folder, then import after cs1graphics.
 
 ```py
 from cs1graphics import *
 from cs1graphicsHelper import *
 ```
 
-Finally, at the __end__ of your script, invoke 1 or more of the helper functions on your canvas:
+At the __end__ of your script, invoke 1 or more of the helper functions on your canvas:
 
 ```py
 paper = Canvas(500, 500, 'yellow')
@@ -53,3 +47,6 @@ drawReferencePoints(paper)
 drawGrid(paper,100)
 markClicks(paper)
 ```
+
+## Demo
+Run [demo.py](https://raw.githubusercontent.com/wellesleycs111/cs1graphicsHelper/master/demo.py) for a full demonstration.

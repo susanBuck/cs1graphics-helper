@@ -2,65 +2,64 @@ from cs1graphics import *
 from cs1graphicsHelper import *
 
 # Reference points:
-# Layer: 0,0
+# Basic shapes (Square, Circle, Rectangle): Center of the shape
 # Polygon: First point of the polygon
-# Square: Center
-# Rectangle: Center
-# Circle: Center
-
-paper = Canvas(500,500,'yellow')
+# Layer: 0,0
 
 
+paper = Canvas(500, 500, 'yellow')
 
-# Draws a green polygon (cone)
-# Note the reference point is the first point in the polygon
-def example0():
-    poly = Polygon(Point(-50,0), Point(50,0), Point(0,200))
+
+def exampleBasicShapes():
+    ''' Draws basic shapes (Circle, Square, Rectangle);
+    Demonstrates the reference point is the center of the shapes '''
+    circle = Circle(50, Point(100, 100))
+    circle.setFillColor('purple')
+    paper.add(circle)
+
+    square = Square(100, Point(225, 100))
+    square.setFillColor('purple')
+    paper.add(square)
+
+    rectangle = Rectangle(150, 100, Point(400, 100))
+    rectangle.setFillColor('purple')
+    paper.add(rectangle)
+
+exampleBasicShapes()
+
+
+def examplePolygon():
+    ''' Draws a polygon;
+    Demonstrates the reference point is the first point in the polygon '''
+    poly = Polygon(Point(-50, 0), Point(50, 0), Point(0, 100))
     poly.setFillColor('green')
-    poly.moveTo(100,100)
+    poly.moveTo(100, 200)
     paper.add(poly)
-    #circle = Circle(100, Point(100,100))
-    #circle.setFillColor('green')
-    #paper.add(circle)
 
-example0()
+examplePolygon()
 
 
+def exampleLayer():
+    ''' Draws a layer with two shapes
+    Demonstrates the reference point of a layer is 0,0 '''
 
-# Draws an blue polygon (cone) in a Layer
-# Note reference point is 0,0
-def example1():
     toybox = Layer()
-    cone = Polygon(Point(-50,0), Point(50,0), Point(0,200))
+
+    # Shape 1 - A blue cone
+    cone = Polygon(Point(-50, 0), Point(50, 0), Point(0, 100))
     cone.setFillColor('blue')
-    ball = Circle(100, Point(0,0))
     toybox.add(cone)
+
+    # Shape 2 - A blue circle
+    ball = Circle(50, Point(50, 50))
+    ball.setFillColor('blue')
     toybox.add(ball)
-    toybox.moveTo(200,200)
+
+    toybox.moveTo(100, 375)
     paper.add(toybox)
 
-example1()
+exampleLayer()
 
-
-
-# Draws a blue polygon (cone) and a red circle on a Layer
-# Note the reference point is 0,0
-def example2():
-    toybox = Layer()
-
-    circ = Circle(100)
-    circ.setFillColor('red')
-    toybox.add(circ)
-
-    cone = Polygon(Point(-50,0), Point(50,0), Point(0,200))
-    cone.setFillColor('blue')
-    toybox.add(cone)
-
-    toybox.moveTo(300,300)
-    #print toybox.getReferencePoint()
-    paper.add(toybox)
-
-#example2()
 
 
 
