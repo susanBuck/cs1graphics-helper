@@ -10,7 +10,7 @@ This script includes 3 helper functions which will make drawing in cs1graphics e
 
 
 ## Instructions
-Put [cs1graphicsHelper.py](https://raw.githubusercontent.com/wellesleycs111/cs1graphicsHelper/master/cs1graphicsHelper.py) in your working folder, then import after cs1graphics.
+Put [cs1graphicsHelper.py](https://github.com/wellesleycs111/cs1graphicsHelper/blob/master/cs1graphicsHelper.py) in your working folder, then import after cs1graphics.
 
 ```py
 from cs1graphics import *
@@ -29,4 +29,4 @@ drawGrid(paper, 100)
 markClicks(paper)
 ```
 
-Run [demo.py](https://raw.githubusercontent.com/wellesleycs111/cs1graphicsHelper/master/demo.py) for a full demonstration.
+Run [demo.py](https://github.com/wellesleycs111/cs1graphicsHelper/blob/master/demo.py) for a full demonstration.
