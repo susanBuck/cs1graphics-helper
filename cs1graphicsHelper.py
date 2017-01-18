@@ -12,48 +12,45 @@ from cs1graphics import *
 
 def drawReferencePoints(canvas):
     ''' Loops through every element on a given canvas and marks the
-    reference point of that element with a small orange circle'''
+    reference point of that element with a small orange circle '''
 
     for el in canvas.getContents():
-        
-        refPoint  = el.getReferencePoint()
+
+        refPoint = el.getReferencePoint()
         refMarker = Circle(5, refPoint)
         refMarker.setDepth(-998)
         refMarker.setFillColor('orange')
         canvas.add(refMarker)
 
-
         if 'Layer' in str(type(el)):
             refMarker.setBorderColor('black')
-            label = Text('x',fontsize=8)
+            label = Text('x', fontsize=8)
             labelDimensions = label.getDimensions()
-            label.adjustReference(-labelDimensions[0]/2,-labelDimensions[1]/2)
-            label.moveTo(refPoint.getX()-4,refPoint.getY()-5)
+            label.adjustReference(-labelDimensions[0]/2, -labelDimensions[1]/2)
+            label.moveTo(refPoint.getX()-4, refPoint.getY()-5)
             label.setDepth(-999)
             canvas.add(label)
-
-        
 
 
 def drawGrid(canvas, division = 100):
     ''' Draws a grid on the canvas of width/height division '''
 
-    width  = canvas.getWidth()
+    width = canvas.getWidth()
     height = canvas.getHeight()
 
     totalCols = width/division
     totalRows = height/division
 
     # Rows
-    row,startY = 0,0
+    row, startY = 0,0
     for i in range(totalRows):
 
-        startX,startY = 0,row * division
-        endX,endY = width,startY
-    
-        line = Polygon(Point(startX,startY),Point(endX,endY))
+        startX, startY = 0,row * division
+        endX, endY = width,startY
 
-        label = makeLabel(startX,startY)
+        line = Polygon(Point(startX, startY), Point(endX, endY))
+
+        label = makeLabel(startX, startY)
 
         canvas.add(line)
         canvas.add(label)
@@ -65,9 +62,9 @@ def drawGrid(canvas, division = 100):
 
         startX,startY = col * division,0
         endX,endY = startX,height
-    
-        line = Polygon(Point(startX,startY),Point(endX,endY))
-        label = makeLabel(startX,startY)
+
+        line = Polygon(Point(startX, startY),Point(endX, endY))
+        label = makeLabel(startX, startY)
 
         canvas.add(label)
         canvas.add(line)
@@ -79,7 +76,7 @@ def makeLabel(startX,startY):
     fontSize = 10
     label = Text(str(startX) + ',' + str(startY),fontSize)
     labelDimensions = label.getDimensions()
-    label.adjustReference(-labelDimensions[0]/2,-labelDimensions[1]/2)
+    label.adjustReference(-labelDimensions[0]/2, -labelDimensions[1]/2)
     label.moveTo(startX,startY)
 
     return label
@@ -88,6 +85,7 @@ def makeLabel(startX,startY):
 def markClicks(canvas):
     ''' Marks the x,y coordinates of wherever the mouse clicks;
     good for finding exact pixel coordinates on the canvas. '''
+
     while True:
 
         clickListener = canvas.wait();

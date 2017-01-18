@@ -19,6 +19,9 @@ def example0():
     poly.setFillColor('green')
     poly.moveTo(100,100)
     paper.add(poly)
+    #circle = Circle(100, Point(100,100))
+    #circle.setFillColor('green')
+    #paper.add(circle)
 
 example0()
 
@@ -30,16 +33,18 @@ def example1():
     toybox = Layer()
     cone = Polygon(Point(-50,0), Point(50,0), Point(0,200))
     cone.setFillColor('blue')
+    ball = Circle(100, Point(0,0))
     toybox.add(cone)
+    toybox.add(ball)
     toybox.moveTo(200,200)
     paper.add(toybox)
 
-#example1()
+example1()
 
 
 
 # Draws a blue polygon (cone) and a red circle on a Layer
-# Note the reference point is 0,0 
+# Note the reference point is 0,0
 def example2():
     toybox = Layer()
 
@@ -55,7 +60,7 @@ def example2():
     #print toybox.getReferencePoint()
     paper.add(toybox)
 
-example2()
+#example2()
 
 
 
@@ -63,6 +68,3 @@ example2()
 drawReferencePoints(paper)
 drawGrid(paper,100)
 markClicks(paper)
-
-
-

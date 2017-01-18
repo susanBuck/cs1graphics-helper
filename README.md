@@ -1,11 +1,11 @@
-# cs1graphics-helper.py
+# cs1graphicsHelper.py
 
 This script includes 3 helper functions which will make drawing on the Canvas easier.
 
 <img src='screenshot.png' alt='Screenshot of cs1graphicshelper'>
 
-+ `drawReferencePoints(canvas)`: Marks the reference point of any objects on the canvas with a small orange circle; Layers have a small `L` inside the circle.
-+ `drawGrid(canvas,dimension)`: Draws a labeled grid on the canvas to help pick your coordinate points. `dimension` indicates the spacing of the grid; defaults to 100.
++ `drawReferencePoints(canvas)`: Marks the reference point of any objects on the canvas with a small orange circle; Layers have a small `x` inside the circle.
++ `drawGrid(canvas, dimension)`: Draws a labeled grid on the canvas to help pick your coordinate points. `dimension` indicates the spacing of the grid; defaults to 100.
 + `markClicks(canvas)`: Prints the coordinates of every mouse click; can slow things down, so toggle it on/off as needed.
 
 ## Demo
@@ -23,11 +23,13 @@ from cs1graphics import *
 from cs1graphicsHelper import *
 ```
 
-Finally, at tne __end__ of your script, invoke 1 or more of the helper functons on your canvas:
+Finally, at the __end__ of your script, invoke 1 or more of the helper functions on your canvas:
 
 ```py
+paper = Canvas(500, 500, 'yellow')
+
 drawReferencePoints(paper)
-drawGrid(paper,100)
+drawGrid(paper, 100)
 markClicks(paper)
 ```
 
@@ -37,22 +39,17 @@ __Basic example:__
 from cs1graphics import *
 from cs1graphicsHelper import *
 
-paper = Canvas(500,500,'yellow')
+paper = Canvas(500, 500, 'yellow')
 
 # Draws a green polygon (cone)
 # Note the reference point is the first point in the polygon
-def example0():
-    poly = Polygon(Point(-50,0), Point(50,0), Point(0,200))
-    poly.setFillColor('green')
-    poly.moveTo(100,100)
-    paper.add(poly)
-
-example0()
+poly = Polygon(Point(-50,0), Point(50,0), Point(0,200))
+poly.setFillColor('green')
+poly.moveTo(100,100)
+paper.add(poly)
 
 # Invoke the helper functions
 drawReferencePoints(paper)
 drawGrid(paper,100)
 markClicks(paper)
 ```
-
-
