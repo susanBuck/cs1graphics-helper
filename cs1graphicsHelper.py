@@ -1,13 +1,6 @@
 from cs1graphics import *
 
-# Example usage:
-#   drawReferencePoints(canvas)
-#   drawGrid(canvas,100)
-#   markClicks(canvas)
-#
-# markClicks can slow things down, so toggle it on/off as needed
-#
-# Read more: https://github.com/susanBuck/cs1graphics-helper
+# Read more: https://github.com/susanBuck/cs1graphicsHelper
 
 
 def drawReferencePoints(canvas):
@@ -16,14 +9,17 @@ def drawReferencePoints(canvas):
 
     for el in canvas.getContents():
 
+        # Get the reference point of the element- that's what we'll mark
         refPoint = el.getReferencePoint()
+
+        # Create the ref point marker, a small orange circle placed at the ref point
         refMarker = Circle(5, refPoint)
         refMarker.setDepth(-998)
         refMarker.setFillColor('orange')
         canvas.add(refMarker)
 
+        # If the element is a Layer, add a little 'x' label
         if 'Layer' in str(type(el)):
-            refMarker.setBorderColor('black')
             label = Text('x', fontsize=8)
             labelDimensions = label.getDimensions()
             label.adjustReference(-labelDimensions[0]/2, -labelDimensions[1]/2)
@@ -84,7 +80,8 @@ def makeLabel(startX,startY):
 
 def markClicks(canvas):
     ''' Marks the x,y coordinates of wherever the mouse clicks;
-    good for finding exact pixel coordinates on the canvas. '''
+    good for finding exact pixel coordinates on the canvas.
+    Can slow things down, so toggle it on/off as needed '''
 
     while True:
 
@@ -96,7 +93,7 @@ def markClicks(canvas):
 
         label = Layer()
 
-        cords = Text(str(x) + "," + str(y),10)
+        cords = Text(str(x) + ", " + str(y),10)
         cordDimensions = cords.getDimensions()
         cords.moveTo(x + cordDimensions[0]/2, y + cordDimensions[1]/2)
         cords.setFontColor('red')
