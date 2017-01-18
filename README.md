@@ -22,31 +22,11 @@ At the __end__ of your script, invoke 1 or more of the helper functions on your 
 ```py
 paper = Canvas(500, 500, 'yellow')
 
+# [...CODE TO ADD SHAPES TO CANVAS HERE...]
+
 drawReferencePoints(paper)
 drawGrid(paper, 100)
 markClicks(paper)
 ```
 
-__Basic example:__
-
-```py
-from cs1graphics import *
-from cs1graphicsHelper import *
-
-paper = Canvas(500, 500, 'yellow')
-
-# Draws a green polygon (cone)
-# Note the reference point is the first point in the polygon
-poly = Polygon(Point(-50,0), Point(50,0), Point(0,200))
-poly.setFillColor('green')
-poly.moveTo(100,100)
-paper.add(poly)
-
-# Invoke the helper functions
-drawReferencePoints(paper)
-drawGrid(paper,100)
-markClicks(paper)
-```
-
-## Demo
 Run [demo.py](https://raw.githubusercontent.com/wellesleycs111/cs1graphicsHelper/master/demo.py) for a full demonstration.
