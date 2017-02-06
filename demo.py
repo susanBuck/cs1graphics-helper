@@ -64,4 +64,4 @@ exampleLayer()
 # Invoke helper functions as the last step
 drawReferencePoints(paper)
 drawGrid(paper,100)
-markClicks(paper)
+#markClicks(paper)
