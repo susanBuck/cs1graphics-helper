@@ -31,6 +31,8 @@ def drawReferencePoints(canvas):
 def drawGrid(canvas, division = 100):
     ''' Draws a grid on the canvas of width/height division '''
 
+    grid = Layer()
+
     width = canvas.getWidth()
     height = canvas.getHeight()
 
@@ -48,8 +50,8 @@ def drawGrid(canvas, division = 100):
 
         label = makeLabel(startX, startY)
 
-        canvas.add(line)
-        canvas.add(label)
+        grid.add(line)
+        grid.add(label)
         row += 1
 
     # Cols
@@ -62,9 +64,11 @@ def drawGrid(canvas, division = 100):
         line = Polygon(Point(startX, startY),Point(endX, endY))
         label = makeLabel(startX, startY)
 
-        canvas.add(label)
-        canvas.add(line)
+        grid.add(line)
+        grid.add(label)
         col += 1
+
+    canvas.add(grid)
 
 
 def makeLabel(startX,startY):

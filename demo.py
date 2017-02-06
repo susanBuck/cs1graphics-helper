@@ -61,8 +61,6 @@ def exampleLayer():
 exampleLayer()
 
 
-
-
 # Invoke helper functions as the last step
 drawReferencePoints(paper)
 drawGrid(paper,100)
