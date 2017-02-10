@@ -7,6 +7,10 @@ def drawReferencePoints(canvas):
     ''' Loops through every element on a given canvas and marks the
     reference point of that element with a small orange circle '''
 
+    if 'Canvas' not in str(type(canvas)):
+        print 'cs1graphicsHelper error: drawReferencePoints can only be invoked on Canvas objects'
+        return;
+
     for el in canvas.getContents():
 
         # Get the reference point of the element- that's what we'll mark
@@ -30,6 +34,10 @@ def drawReferencePoints(canvas):
 
 def drawGrid(canvas, division = 100):
     ''' Draws a grid on the canvas of width/height division '''
+
+    if 'Canvas' not in str(type(canvas)):
+        print 'cs1graphicsHelper error: drawGrid can only be invoked on Canvas objects'
+        return;
 
     grid = Layer()
 
@@ -86,6 +94,10 @@ def markClicks(canvas):
     ''' Marks the x,y coordinates of wherever the mouse clicks;
     good for finding exact pixel coordinates on the canvas.
     Can slow things down, so toggle it on/off as needed '''
+
+    if 'Canvas' not in str(type(canvas)):
+        print 'cs1graphicsHelper error: markClicks can only be invoked on Canvas objects'
+        return;
 
     while True:
 
